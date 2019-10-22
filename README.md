@@ -8,6 +8,10 @@
 Input: `Hello, there`
 
 Output: `HELLO, THERE`
+```
+var string = "Hello, there"
+print(string.uppercased())
+```
 
 2. **Given a String, return a String alternating between uppercase and lowercase letters**
 
@@ -15,7 +19,13 @@ Output: `HELLO, THERE`
 Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
-
+```
+var output = ""
+func alternatedUpperandLowerCase(for words: String) -> String {
+    for letter in words.enumerated() {
+            }
+    return String()
+```
 
 3. **Given a String, return a String with all occurrences of a given letter removed**
 
