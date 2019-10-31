@@ -9,6 +9,7 @@ Input: `Hello, there`
 
 Output: `HELLO, THERE`
 ```
+My Answer !! 
 var string = "Hello, there"
 print(string.uppercased())
 ```
@@ -20,11 +21,18 @@ Input: `Hello, there`
 
 Output: `HeLlO, tHeRe`
 ```
+My Answer:
 var output = ""
 func alternatedUpperandLowerCase(for words: String) -> String {
-    for letter in words.enumerated() {
-            }
+    for (num,letter) in words.enumerated() {
+    if num % 2 == 1
+    output.append(letter.lowercase())
+    
+    } else if num % 2 == 0 {
+    output.append(letter.uppercase)
+}
     return String()
+    }
 ```
 
 3. **Given a String, return a String with all occurrences of a given letter removed**
@@ -32,8 +40,17 @@ func alternatedUpperandLowerCase(for words: String) -> String {
 Input: `Hello, there`
 
 Output: `Hllo, thr`
+```
+My Answer :
+var input = "Hello There"
+var output = ""
+var letter = "e"
+for char in input where String(char) != letter {
+    output.append(char)
+        
+    }
 
-
+```
 ## Arrays
 
 
@@ -42,6 +59,13 @@ Output: `Hllo, thr`
 Input: `[1,5,2,4,1,4]`
 
 Output: `5`
+```
+My Answer: 
+var largestArray = [1,5,2,4,1,4]
+
+var maxRan = largestArray.max() ?? 0
+print(maxRan)
+```
 
 2. **Given an array of type [Int], return the smallest element**
 
@@ -49,17 +73,41 @@ Input: `[1,5,2,4,1,4]`
 
 Output: `1`
 
+```
+My Answer:
+
+var smallestArray = [1,5,2,4,1,4]
+
+var minRan = smallestArray.min() ?? 0
+print(minRan)
+```
+
 3. **Given an array of type [Int], return its sum**
 
 Input: `[1,5,2,4,1,4]`
 
 Output: `17`
 
+```
+My Answer
+var totalSum = [1,5,2,4,1,4]
+print(totalSum.reduce(0,+))
+
+```
+
 4. **Given an array of type [Double], return its average**
 
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `3.6`
+```
+My Answer:
+var averageArray = [3,4.5,7.5,2,1]
+let firstNum = averageArray.reduce(0,+) // this addes all the numbers together
+let secNum = Double(averageArray.count) // this counts the numbers in the array
+let avgAns = firstNum / secNum
+print(avgAns)
+```
 
 5. **Given an array of type [Double] and a Double, return the sum of all numbers in the array greater than a given number**
 
@@ -67,12 +115,32 @@ Input: `[3,4.5,7.5,2,1], 3`
 
 Output: `12`
 
+```
+var sumofDoubles = 0.0
+let arrayofDoubles = [3,4.5,7.5,2,1]
+for num in arrayofDoubles{
+    if num > 3{
+    sumofDoubles += num
+    }
+}
+print(sumofDoubles)
+```
+
 
 6. **Given an array of type [Double], return the product of all the elements**
 
 Input: `[3,4.5,7.5,2,1]`
 
 Output: `202.5`
+
+```
+var multiple = 1.0
+let array = [3,4.5,7.5,2,1]
+for num in array{
+    multiple *= num
+    }
+print(multiple)
+```
 
 7. **Given an array of type [Int], return the second smallest value in the array**
 
@@ -83,10 +151,59 @@ Output: `3`
 ## Optionals
 
 1. **Given an array of type [String?] return an array of [String] removing all nil values**
-
+// may or may not contain value 
+// return = function 
 Input: `[nil, "We", "come", nil, "in", "peace"]`
 
 Output: `["We", "come", "in", "peace"]`
+
+```
+My answer:
+var array = [nil, "We", "come", nil, "in", "peace"]
+var newArray = [String]()
+for str in array {
+    if let unwrapStr = str {
+        newArray.append(unwrapStr)
+    } else {
+        print("not valid value, \(String(describing: str))")
+    }
+}
+print(newArray)
+
+
+
+notes:
+
+// optional binding 
+func returnNonNil(arrayOfInput:[string?]) -> [String]{
+for word in arrayOfInput{
+if let unwrappedWord = word {
+output.append(unwrappedWord)
+}
+}
+return output
+}
+
+// neo co
+var output = [String]()
+var input = [nil, "We", "Come", nil, "in","Peace"]
+func returnNonNilValue(arr: [String?]) -> [String]{
+    for word in arr {
+        output.append(word ?? " ")
+    }
+    return output
+}
+//Bang dont use it unless 
+//var output = [String]()
+//var input = [nil, "We", "Come", nil, "in","Peace"]
+//func returnNonNilValue(arr: [String?]) -> [String]{
+//    for word in arr {
+//        output.append(word!)
+//    }
+//    return output
+//}
+```
+
 
 2. **Given an array of type [String?]? return an array of [String] removing all nil values**
 
