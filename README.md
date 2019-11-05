@@ -116,6 +116,7 @@ Input: `[3,4.5,7.5,2,1], 3`
 Output: `12`
 
 ```
+My answer:
 var sumofDoubles = 0.0
 let arrayofDoubles = [3,4.5,7.5,2,1]
 for num in arrayofDoubles{
@@ -134,6 +135,7 @@ Input: `[3,4.5,7.5,2,1]`
 Output: `202.5`
 
 ```
+My Answer:
 var multiple = 1.0
 let array = [3,4.5,7.5,2,1]
 for num in array{
@@ -147,6 +149,13 @@ print(multiple)
 Input: `[3,6,1,9,4,8]`
 
 Output: `3`
+
+My answer:
+
+```
+let array = [3,6,1,9,4,8].sorted()
+print(array[1])
+```
 
 ## Optionals
 
@@ -211,11 +220,31 @@ Input: `nil`
 
 Output: `[]`
 
+My Answer:
+```
+let removingnil = [String?]()
+let nonNillArray = array.filter({$0 != nil})
+print(nonNillArray)
+```
 3. **Given an array of type [Int?] return the sum of all non-nil values.  Use guard statements in your solution.**
 
 Input: `[4, nil, 9, 5, nil]`
 
 Output: `18`
+
+My Answer:
+
+```
+var inputWithNil = [4, nil, 9, 5, nil]
+var nonNil = 0
+
+for num in inputWithNil {
+   if num != nil {
+        nonNil += num!
+    }
+}
+print(nonNil)
+```
 
 4. **Given an array of type [Int?]? return the sum of all non-nil values.  Use guard statements in your solution.**
 
@@ -237,6 +266,18 @@ Output: `24`
 Input: `["apple", "apple", "banana", "banana", "banana", "cake", "cake"]`
 
 Output: `["apple", "banana", "cake"]`
+
+My Answer:
+
+```
+
+var words = ["apple", "apple", "banana", "banana", "banana", "cake", "cake"]
+
+words = Array(Set(words))
+
+print(words.sorted())
+
+```
 
 2. **Given a String, find the most frequently occurring letter**
 
